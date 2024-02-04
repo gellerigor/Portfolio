@@ -1,0 +1,31 @@
+# Run all nessesary packages
+library(tidyverse)
+library(lubridate)
+
+#Upload all data 
+tripdata_2022_05 <- read_csv("Desktop/bike_shring/tripdata/202205-divvy-tripdata.csv")
+tripdata_2022_06 <- read_csv("Desktop/bike_shring/tripdata/202206-divvy-tripdata.csv")
+tripdata_2022_07 <- read_csv("Desktop/bike_shring/tripdata/202207-divvy-tripdata.csv")
+tripdata_2022_08 <- read_csv("Desktop/bike_shring/tripdata/202208-divvy-tripdata.csv")
+tripdata_2022_09 <- read_csv("Desktop/bike_shring/tripdata/202209-divvy-publictripdata.csv")
+tripdata_2022_10 <- read_csv("Desktop/bike_shring/tripdata/202210-divvy-tripdata.csv")
+tripdata_2022_11 <- read_csv("Desktop/bike_shring/tripdata/202211-divvy-tripdata.csv")
+tripdata_2022_12 <- read_csv("Desktop/bike_shring/tripdata/202212-divvy-tripdata.csv")
+tripdata_2023_01 <- read_csv("Desktop/bike_shring/tripdata/202301-divvy-tripdata.csv")
+tripdata_2023_02 <- read_csv("Desktop/bike_shring/tripdata/202302-divvy-tripdata.csv")
+tripdata_2023_03 <- read_csv("Desktop/bike_shring/tripdata/202303-divvy-tripdata.csv")
+tripdata_2023_04 <- read_csv("Desktop/bike_shring/tripdata/202304-divvy-tripdata.csv")
+
+#inspect column names of each month 
+colnames(tripdata_2022_05)
+colnames(tripdata_2022_06)
+colnames(tripdata_2022_07)
+colnames(tripdata_2022_08)
+colnames(tripdata_2022_09)
+colnames(tripdata_2022_10)
+colnames(tripdata_2022_11)
+colnames(tripdata_2022_12)
+colnames(tripdata_2023_01)
+colnames(tripdata_2023_02)
+colnames(tripdata_2023_03)
+colnames(tripdata_2023_04)
