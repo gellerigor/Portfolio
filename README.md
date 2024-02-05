@@ -1,4 +1,3 @@
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSonGKCfvk8fUSykyOwt818jVvKTFoLO7IfjPVu5epxlECeM1ecRh6BG6KdbuEJ30BANeA&usqp=CAU)
 # **About Dataset**
 
 *Data collected from [https://divvy-tripdata.s3.amazonaws.com/index.html](https://divvy-tripdata.s3.amazonaws.com/index.html) which is Chicago's 
