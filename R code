@@ -29,3 +29,21 @@ colnames(tripdata_2023_01)
 colnames(tripdata_2023_02)
 colnames(tripdata_2023_03)
 colnames(tripdata_2023_04)
+
+
+# general summary of each month
+str(tripdata_2022_05)
+str(tripdata_2022_06)
+str(tripdata_2022_07)
+str(tripdata_2022_08)
+str(tripdata_2022_09)
+str(tripdata_2022_10)
+str(tripdata_2022_11)
+str(tripdata_2022_12)
+str(tripdata_2023_01)
+str(tripdata_2023_02)
+str(tripdata_2023_03)
+str(tripdata_2023_04)
+
+
+
