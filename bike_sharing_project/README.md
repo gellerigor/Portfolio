@@ -11,7 +11,7 @@ The data has been made available by Motivate International Inc. under [this lice
 
 This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
 
-# **BACKGROUND**
+# **Background**
 
  **Case Study: How Does a Bike-Share Navigate Speedy Success?**
 
