@@ -169,6 +169,18 @@ all_trips_v2 %>%
   ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
+![](/bike_sharing_project/images/rides_by_type.png)
+
+
+```
+all_trips_v2 %>%
+mutate(weekday = wday(started_at, label = TRUE)) %>% 
+    group_by(member_casual, month) %>%
+    summarise(number_of_rides = n(), .groups = 'drop') %>%
+    ggplot(aes(x = month, y = number_of_rides, fill = member_casual)) + 
+    geom_bar(position = "dodge", stat = "identity")
+```
+
 
 
 
