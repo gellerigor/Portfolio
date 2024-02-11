@@ -137,7 +137,10 @@ all_trips_v2 %>%
     summarise(average_ride_length = mean(ride_length), .groups = 'drop') %>%
     arrange(month)
 ```
+![](/bike_sharing_project/images/img_7.png)
 
+
+Analyze ridership data by type and weekday.
 
 
 
