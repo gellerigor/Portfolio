@@ -142,6 +142,16 @@ all_trips_v2 %>%
 
 Analyze ridership data by type and weekday.
 
+```
+all_trips_v2 %>% 
+  mutate(weekday = wday(started_at, label = TRUE)) %>%  #creates weekday field using wday()
+  group_by(member_casual, weekday) %>%  #groups by usertype and weekday
+  summarise(number_of_rides = n()							#calculates the number of rides and average duration 
+            ,average_duration = mean(ride_length), .groups = "keep") %>% 		# calculates the average duration
+  arrange(member_casual, weekday)								# sorts
+```
+
+
 
 
 
