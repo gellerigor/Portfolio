@@ -47,7 +47,7 @@ dim(all_trips)
 summary(all_trips)
 head(all_trips)
 ```
-
+![](/bike_sharing_project/images/img_2.png)
 
 Add columns that list the date, month, day, and year of each ride in order to aggregate ride data for each month, day, or year ... before completing these operations we could only aggregate at the ride level more on date format in R found at that link.
 
