@@ -150,7 +150,13 @@ all_trips_v2 %>%
             ,average_duration = mean(ride_length), .groups = "keep") %>% 		# calculates the average duration
   arrange(member_casual, weekday)								# sorts
 ```
+![](/bike_sharing_project/images/img_8.png)
 
+
+
+# Visualization 
+
+Let's visualize the number of rides by rider type to clarify our findings.
 
 
 
