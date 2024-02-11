@@ -108,14 +108,26 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$d
 ```
 # order days
 all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
-```
 
-```
 # Now, let's run again the average ride time by each day for members vs casual users
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
 ```
+![](/bike_sharing_project/images/img_5.png)
 
+```
+#Assign the correct order to each month of the year
+all_trips_v2$month <-
+    ordered(all_trips_v2$month, levels = c('05', '06', '07', '08', '09', '10', '11', '12', '01', '02', '03', '04'))
+```
 
+Lets see difference between members and casual riders by month.
+
+```
+all_trips_v2 %>%
+    group_by(member_casual, month) %>%
+    summarise(number_of_ride = n(), .groups = 'keep') %>%
+    arrange(month)
+```
 
 
 
