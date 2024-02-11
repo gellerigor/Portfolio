@@ -212,8 +212,18 @@ all_trips_v2 %>%
     ggplot(aes(x = month, y = average_duration, fill = member_casual)) + 
     geom_bar(position = "dodge", stat = "identity")
 ```
+![](/bike_sharing_project/images/duration.png)
 
 
+**Finding**
+
+1. Casual rider's trip is longer than members ones regardless of the season or day.
+2. All users take longer trips over weekend and summer.
+
+
+**Conclusion**
+
+Overall, these ridership patterns suggest that bike sharing is a popular mode of transportation for both casual and membership riders. It is especially popular during the spring months, when the weather is more favorable for biking. Casual riders tend to take longer trips than members riders, regardless of the season or day. However, casual riders take slightly longer trips  membership riders tand to take rides more often.
 
 
 
