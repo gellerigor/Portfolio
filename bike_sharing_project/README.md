@@ -91,6 +91,14 @@ Notice that the days of the week are out of order , let's fix that to.
 
 Now lets analyze ridership data by type and weekday
 
+```
+summary(all_trips_v2)
+# compare users
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = mean)
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = median)
+```
+
+
 
 
 
