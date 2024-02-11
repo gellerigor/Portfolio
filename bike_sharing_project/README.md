@@ -128,6 +128,17 @@ all_trips_v2 %>%
     summarise(number_of_ride = n(), .groups = 'keep') %>%
     arrange(month)
 ```
+![](/bike_sharing_project/images/img_6.png)
+
+
+```
+all_trips_v2 %>%
+    group_by(member_casual, month) %>%
+    summarise(average_ride_length = mean(ride_length), .groups = 'drop') %>%
+    arrange(month)
+```
+
+
 
 
 
