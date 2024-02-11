@@ -35,3 +35,15 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 
 For this exploratory analysis, we'll use R along with additional packages. The most important of them will be packages collected in the "tidyverse" and "lubridate" packages, which allow for easy manipulation, preparation, analysis and visualization of data and also lubridate that make dealing with dates a little easier.
 
+```
+#combine each month into 1 dataframe  
+all_trips <- bind_rows(tripdata_2022_05, tripdata_2022_06, tripdata_2022_07, tripdata_2022_08, tripdata_2022_09, tripdata_2022_10, 
+                       tripdata_2022_11, tripdata_2022_12, tripdata_2023_01, tripdata_2023_02, tripdata_2023_03,
+                       tripdata_2023_04,)
+
+colnames(all_trips)
+glimpse(all_trips)
+dim(all_trips)
+summary(all_trips)
+head(all_trips)
+```
