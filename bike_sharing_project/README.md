@@ -202,6 +202,16 @@ all_trips_v2 %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
+![](/bike_sharing_project/images/avg_duration.png)
+
+
+```
+all_trips_v2 %>%
+    group_by(member_casual, month) %>%
+    summarise(average_duration = mean(ride_length), .groups = 'keep') %>%
+    ggplot(aes(x = month, y = average_duration, fill = member_casual)) + 
+    geom_bar(position = "dodge", stat = "identity")
+```
 
 
 
