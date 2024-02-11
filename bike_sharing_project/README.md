@@ -35,7 +35,7 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 
 For this exploratory analysis, we'll use R along with additional packages. The most important of them will be packages collected in the "tidyverse" and "lubridate" packages, which allow for easy manipulation, preparation, analysis and visualization of data and also lubridate that make dealing with dates a little easier.
 
-```{r}
+```
 #combine each month into 1 dataframe  
 all_trips <- bind_rows(tripdata_2022_05, tripdata_2022_06, tripdata_2022_07, tripdata_2022_08, tripdata_2022_09, tripdata_2022_10, 
                        tripdata_2022_11, tripdata_2022_12, tripdata_2023_01, tripdata_2023_02, tripdata_2023_03,
@@ -47,3 +47,52 @@ dim(all_trips)
 summary(all_trips)
 head(all_trips)
 ```
+
+
+Add columns that list the date, month, day, and year of each ride in order to aggregate ride data for each month, day, or year ... before completing these operations we could only aggregate at the ride level more on date format in R found at that link.
+
+```
+all_trips$date <- as.Date(all_trips$started_at) #The default format is yyyy-mm-dd
+all_trips$month <- format(as.Date(all_trips$date), "%m")
+all_trips$day <- format(as.Date(all_trips$date), "%d")
+all_trips$year <- format(as.Date(all_trips$date), "%Y")
+all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
+
+colnames(all_trips)
+```
+
+Add a "ride_length" calculation to all_trips (in seconds) , than convert "ride_length" from double to numeric so we can run calculations on the data.
+
+```
+all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
+
+str(all_trips)
+
+# Convert "ride_length" 
+all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
+is.numeric(all_trips$ride_length)
+```
+
+With summary() function we can check the ride_length column and see that we have negative values and outliers , remove wrong data such as negative values(<= 0), outliers like values more than 8640 seconds (24 hours) Total number of rows 5799014 (drop from 5829030 decrease by 0.5% compare to amount of data its not much but very important)
+
+```
+all_trips_v2 <- all_trips[!(all_trips$ride_length<0 | all_trips$ride_length>8640),]
+#Inspect new data
+dim(all_trips_v2)
+```
+
+# Analysis
+
+Lets make some descriptive analysis:
+1. compare members and casual users
+2. see the average ride time by each day for members vs casual users.
+
+Notice that the days of the week are out of order , let's fix that to.
+
+Now lets analyze ridership data by type and weekday
+
+
+
+
+
+
