@@ -180,6 +180,29 @@ mutate(weekday = wday(started_at, label = TRUE)) %>%
     ggplot(aes(x = month, y = number_of_rides, fill = member_casual)) + 
     geom_bar(position = "dodge", stat = "identity")
 ```
+![](/bike_sharing_project/images/monthly_rides.png)
+
+**Finding**
+
+1. Casual riders are more likely to take a ride on weekend while membership riders use on weekday more often.
+2. Spring is the peak season for both rider types.
+
+
+Let's create a visualization for average duration
+
+
+```
+# Let's create a visualization for average duration
+all_trips_v2 %>% 
+  mutate(weekday = wday(started_at, label = TRUE)) %>% 
+  group_by(member_casual, weekday) %>% 
+  summarise(number_of_rides = n()
+            ,average_duration = mean(ride_length), .groups = "keep") %>% 
+  arrange(member_casual, weekday)  %>% 
+  ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
+  geom_col(position = "dodge")
+```
+
 
 
 
